@@ -14,3 +14,4 @@ Special thanks to Udacity and all of those contributing to helping us to learn a
 stackoverflow.com
 medium.com
 brendandawes.com/blog/autogitignore
+pythondocs.docs.python.org
