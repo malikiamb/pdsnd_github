@@ -5,9 +5,9 @@ import json
 import datetime
 import time
 import calendar
-import math
+#import math
 
-#City_Data stores data csv's 
+#City_Data stores data csv's
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -31,7 +31,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle     invalid inputs
-    
+
     city = input("Choose a city (Chicago, New york city , Washington\n\n) :").lower()
     while city not in CITIES:
         print("Oops, Please enter a valid City from the list")
@@ -66,25 +66,25 @@ def load_data(city, month, day):
     """
     #load dat into a dataframe
     df = pd.read_csv(CITY_DATA[city])
-    
+
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
     df['month'] = df['Start Time'].dt.month
-    
+
     df['day_of_week'] = df['Start Time'].dt.weekday_name
-    
-    df['start hour'] = df['Start Time'].dt.hour    
+
+    df['start hour'] = df['Start Time'].dt.hour
 
     #filter for month to create new dataframe
     if month != 'all':
        months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
-       month = months.index(month) 
+       month = months.index(month)
        df = df[df['month'] == month]
-        
+
     #filter for day to create new dataframe
     if day != 'all':
         df = df[df['day_of_week'] == day.title()]
-        
+
     return df
 
 
@@ -102,8 +102,8 @@ def time_stats(df):
 
     # TO DO: display the most common start hour
     print('The most common start hour is : {}'.format(df['start hour'].mode()[0]))
-    
-    
+
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -152,22 +152,22 @@ def user_stats(df,city):
 
     # TO DO: Display counts of user types
     print(df['User Type'].value_counts())
-   
+
 
     # TO DO: Display counts of gender
     if 'Gender' in(df.columns):
         print(df['Gender'].value_counts())
-        
-         
+
+
 
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in(df.columns):
         print('The earliest year of birth is : ',int(df['Birth Year'].min()))
         print('The most recent year of birth is : ',int(df['Birth Year'].max()))
         print('The most common year of birth is : ',int(df['Birth Year'].mode()[0]))
-    
-    
-    
+
+
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -176,14 +176,14 @@ def display_data(df):
     i = 0
     answer = input("Would you like to display the first 5 rows of data? (yes/no) :").lower()
     pd.set_option('display.max_columns',None)
-    
+
     while True:
         if answer == 'no':
             break
         print(df[i:i+5])
         answer = input("Would you like to display the next 5 rows of data? (yes/no) :").lower()
-        
-        
+
+
         i += 5
 
 def main():
@@ -196,7 +196,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df,city)
         display_data(df)
-        
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
