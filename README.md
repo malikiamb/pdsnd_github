@@ -16,3 +16,4 @@ medium.com
 brendandawes.com/blog/autogitignore
 pythondocs.docs.python.org
 docs.github.com
+devconnected.net
