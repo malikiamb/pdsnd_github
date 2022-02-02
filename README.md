@@ -17,3 +17,4 @@ brendandawes.com/blog/autogitignore
 pythondocs.docs.python.org
 docs.github.com
 devconnected.net
+https://kentakodashima.medium.com/git-create-a-branch-from-local-repository-a8b84aaf116c
