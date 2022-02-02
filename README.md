@@ -3,7 +3,7 @@
 Jan 26. 2022
 Include the date you created this project and README file.
 
-Udacity Bikeshare project
+Udacity Bikeshare project Spring 2017
 
 
 This project allowed users to filter the following: City, month and day from user data files of bikeshare rentals in 3 major cities: New York City, Chicago, and Washington. The selected filters which includes an option for all would allow the user to see the most popular results for things like the time of day, the most frequent trips between stations along with age and gender where available.
